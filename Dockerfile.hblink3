@@ -16,7 +16,7 @@ RUN cd /opt/hblink3/ && \
     pip install --no-cache-dir -r requirements.txt
 
 
-ADD entrypoint /entrypoint
+ADD hblink3/entrypoint /entrypoint
 
 RUN adduser -u 54000 radio && \
     adduser radio radio && \

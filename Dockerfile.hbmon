@@ -6,7 +6,7 @@ RUN git clone https://github.com/sp2ong/HBmonitor.git
 
 RUN cd HBmonitor && chmod +x install.sh && \
 ./install.sh
-COPY config_SAMPLE.py /opt/HBmonitor/config.py
+COPY HBmonitor/config_SAMPLE.py /opt/HBmonitor/config.py
 
 EXPOSE 80/tcp
 
