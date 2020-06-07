@@ -1,0 +1,12 @@
+
+sudo chmod -R 777 conf/
+sudo chmod -R 777 log/
+
+sudo docker-compose stop 
+sudo docker-compose rm -f -a
+sudo docker-compose up
+
+
+
+sudo chmod -R 777 log/
+

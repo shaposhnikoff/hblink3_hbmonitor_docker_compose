@@ -1,0 +1,28 @@
+version: "3"
+services:
+  hblink3:
+    build:
+      context: .
+      dockerfile: Dockerfile.hblink3
+    restart: unless-stopped
+    network_mode: host
+    ports:
+     - "62030:62030/udp"
+     - "62031:62031/udp"
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+
+  hbmonitor:
+    build:
+      context: .
+      dockerfile: Dockerfile.hbmon
+    restart: unless-stopped
+    network_mode: host
+    ports:
+     - "8080:8080"
+     - "9000:9000"
+    volumes:
+      - ./config1:/config1
+      - /etc/localtime:/etc/localtime:ro
+

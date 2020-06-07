@@ -1,0 +1,6 @@
+[submodule "HBmonitor"]
+	path = HBmonitor
+	url = git@github.com:sp2ong/HBmonitor.git
+[submodule "hblink3"]
+	path = hblink3
+	url = git@github.com:n0mjs710/hblink3.git
