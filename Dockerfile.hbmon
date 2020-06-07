@@ -11,4 +11,5 @@ COPY HBmonitor/config_SAMPLE.py /opt/HBmonitor/config.py
 EXPOSE 80/tcp
 
 WORKDIR /opt/HBmonitor
-CMD python3 monitor.py 
+CMD python3 monitor.py
+ 

@@ -4,25 +4,32 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.hblink3
+    container_name: hblink3
     restart: unless-stopped
     network_mode: host
     ports:
      - "62030:62030/udp"
      - "62031:62031/udp"
     volumes:
-      - ./config:/config
+      - ./config_hblink3:/config
       - /etc/localtime:/etc/localtime:ro
+#    entrypoint: ["python", "hblink.py", "-c", "/config/hblink.cfg"]
+
 
   hbmonitor:
     build:
       context: .
       dockerfile: Dockerfile.hbmon
+    container_name: hbmon
     restart: unless-stopped
     network_mode: host
     ports:
      - "8080:8080"
      - "9000:9000"
     volumes:
-      - ./config1:/config1
+      - ./config_hbmon:/config
       - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - hblink3
+
 

@@ -28,6 +28,7 @@ USER radio
 EXPOSE 54000/udp
 workdir /opt/hblink3/
 VOLUME /config/
+COPY /config_hblink3/rules.py /opt/hblink3/rules.py
 
 #ENTRYPOINT [ "/entrypoint" ]
-CMD python hblink.py -c /config/hblink.cfg
+CMD python3 bridge.py -c /config/hblink.cfg
