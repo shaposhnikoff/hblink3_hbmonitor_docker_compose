@@ -11,9 +11,11 @@ services:
      - "62030:62030/udp"
      - "62031:62031/udp"
     volumes:
-      - ./config_hblink3:/config
       - /etc/localtime:/etc/localtime:ro
-#    entrypoint: ["python", "hblink.py", "-c", "/config/hblink.cfg"]
+      - ./dmr/hblink.cfg:/config/hblink.cfg  
+      - ./dmr/peer_ids.json:/config/peer_ids.json  
+      - ./dmr/rules.py:/config/rules.py  
+      - ./dmr/subscriber_ids.json:/config/subscriber_ids.json
 
 
   hbmonitor:
@@ -24,10 +26,10 @@ services:
     restart: unless-stopped
     network_mode: host
     ports:
-     - "8080:8080"
+     - "8081:8080"
      - "9000:9000"
     volumes:
-      - ./config_hbmon:/config
+      - ./dmr/config_hbmonitor.py:/opt/HBmonitor/config.py
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       - hblink3

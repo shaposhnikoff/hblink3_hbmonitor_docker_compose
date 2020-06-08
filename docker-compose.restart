@@ -1,5 +1,5 @@
 
-sudo chmod -R 777 conf*/
+sudo chmod -R 777 conf*/ dmr/
 
 sudo docker-compose stop 
 sudo docker-compose rm -f -a
