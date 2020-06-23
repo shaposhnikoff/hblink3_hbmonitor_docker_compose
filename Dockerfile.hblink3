@@ -31,4 +31,4 @@ VOLUME /config/
 COPY /config_hblink3/rules.py /opt/hblink3/rules.py
 
 #ENTRYPOINT [ "/entrypoint" ]
-CMD python3 bridge.py -c /config/hblink.cfg
+CMD python3 hblink.py -c /config/hblink.cfg
